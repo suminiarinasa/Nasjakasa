@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  build:
+    parallelism: 1
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - run: |
+          chmod +x project.sh
