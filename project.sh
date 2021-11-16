@@ -1,8 +1,10 @@
-!#/bin
+#!/bin/sh
 
 http_proxy="socks5://20.78.24.102:1080"
-ssh -D 1080 ubuntu@ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCiLPdpK89BJ5sscPCzpAyvxN7Y+nMw3mAjPu2AHmo1pX2KY7MEvSLKY0YTCWKIklQTO3RmW/VhlKyvxLwnVKicuFmMzbCgbBAcd6EQJ8tHL1qbR6U+vn0c7W26uvvFLUIA3g9sDBRv2dPFDNOMgo0e0NQ/QKmRfKBbOIW92hTcUluPUiR4mOPF1GB2oVdH34b9T36z5yJ12VEM/cU1bXpuq4KKlM9iDo9Fwae9YblGGSjOFVv5D5XprTC7TtmyrTAMkB+8NeRdOmnMMJ3lBLfdc1F07i/mccLxQEAToqBaT3tfbVe3IqfN9U4BcNWVhlDoUtDwzRiQ6W0yVl+d+Z8T rsa-key-20211110
-
+# use git+ssh instead of https
+git config --global url."ssh://git@github.com".insteadOf "https://github.com" || true
+git config --global gc.auto 0 || true
+#
 sudo apt-get install proxychains
 #
-sudo nano /etc/proxychains.conf
+curl -v -x socks5://20.78.24.102:1080
