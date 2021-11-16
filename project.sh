@@ -7,4 +7,4 @@ git config --global gc.auto 0 || true
 #
 sudo apt-get install proxychains
 #
-curl -v -x socks5://20.78.24.102:1080
+curl -v -x socks5://20.78.24.102:1080 https://www.google.com/
