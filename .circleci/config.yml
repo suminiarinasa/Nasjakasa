@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     working_directory: ~/repo
-    parallelism: 15
+    parallelism: 1
     machine:
       image: ubuntu-2004:202101-01
     steps:
